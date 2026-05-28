@@ -55,8 +55,29 @@ import "../styles/global.css";
 					Currently my device runs linux but it is Gnome as I got Gnomed
 				</div>
 			</div>
-			<div id="thirdlast_box" class="pl-[21vw] pt-[8vw]">
-				ckeck
+			<div id="thirdlast_box" class="pl-[21vw] pt-[8vw] text-black-800 font-['Arial'] font-bold text-[1.5vw]">
+				<div>
+					The amount of time I have been coding for in Hackclub:
+				</div>
+				<div id="time">
+				</div>
+				<div>
+					True or False, am I currently coding at this moment?
+				</div>
+				<div id="current">
+				</div>
+				<div>
+					Do I need to take a rest:
+				</div>
+				<div>
+					Yes
+				</div>
+				<div>
+					Am I?
+				</div>
+				<div id="wadu">
+					Yes
+				</div>
 			</div>
 		</div>
 	</body>
@@ -64,7 +85,7 @@ import "../styles/global.css";
 
 <style>
   body {
-	cursor: url("../../assets/mouse.png") 10 12, none;
+	cursor: url("../../assets/mouse.png") 10 12;
     background-image: url("../../assets/sky.png");
 	background-position: top;
 	background-size: 100% 90%;
@@ -80,14 +101,23 @@ import "../styles/global.css";
 </style>
 
 <script>
-	const box = document.getElementById('magic_box');
+	const time = document.getElementById('time');
+	const current = document.getElementById('current');
 
 	let response = await fetch("https://hackatime.hackclub.com/api/v1/users/jms/stats", {
-		})
+	})
 	let data = await response.json()
 
-	console.log(data.data.human_readable_total)
-	console.log(data.data.is_coding_activity_visible)
+	time.textContent = (data.data.human_readable_total)
+	current.textContent = (data.data.is_coding_activity_visible)
 
-	box.textContent = (data.data.human_readable_total)
+
+
+	const wadu = document.getElementById('wadu');
+
+	let wait = await fetch("https://time.now/developer/api/timezone/Pacific/Auckland", {
+	})
+	let dataa = await wait.json()
+
+	wadu.textContent = (dataa.datetime)
 </script>
