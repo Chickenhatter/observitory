@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+
 ---
 
 
@@ -14,6 +15,7 @@ import "../styles/global.css";
 		<title>Main_Watch</title>
 	</head>
 	<body>
+		<div id="magic_box">fail</div>
 		<div id="my_website">
 			<div class = "flex justify-end">
 				<h1 class="text-yellow-500 text-right text-[10vw] font-['Arial'] font-bold">
@@ -36,10 +38,10 @@ import "../styles/global.css";
 
 
 		<div class="final_section">
-			<div id="firstlast_box" class="pl-[21vw] pt-[80vw] text-black-800  font-['Arial'] font-bold text-[1.5vw] pr-[27vw]">
-				Well you made it all the way here so you might as well learn a small amount about me. My name is James and I am a 15 year old coder from NZ. I started coding due to Hackclub
+			<div id="firstlast_box" class="pl-[21vw] pt-[80vw]  font-['Arial'] font-bold text-[1.5vw] pr-[27vw]">
+				Well you made it all the way here so you might as well learn a small amount about me. My name is James and I am a 15 year old coder from NZ. I started coding due to <a href="https://hackclub.com/" class="grey">Hackclub</a> which is a non profit that encourages teens to code. I have participated in Horizons, Siege, Reboot and Scraps along with going to events like Daydream, Campfire and <a href="https://www.kiwihacks.org/" class="grey">Kiwihacks</a>
 			</div>
-			<div id="secondlast_box" class="pl-[47vw] pt-[17vw] text-black-800  font-['Arial'] font-bold text-[1.5vw] pr-[0vw]">
+			<div id="secondlast_box" class="pl-[47vw] pt-[8vw] text-black-800  font-['Arial'] font-bold text-[1.5vw] pr-[0vw]">
 				<div class="text-[2.5vw]">
 					For coding I know a few languages,
 				</div> 
@@ -53,8 +55,8 @@ import "../styles/global.css";
 					Currently my device runs linux but it is Gnome as I got Gnomed
 				</div>
 			</div>
-			<div id="thirdlast_box">
-
+			<div id="thirdlast_box" class="pl-[21vw] pt-[8vw]">
+				ckeck
 			</div>
 		</div>
 	</body>
@@ -62,14 +64,30 @@ import "../styles/global.css";
 
 <style>
   body {
+	cursor: url("../../assets/mouse.png") 10 12, none;
     background-image: url("../../assets/sky.png");
 	background-position: top;
-	background-size: cover;
+	background-size: 100% 90%;
   }
   .final_section{
 	background-image: url("../../assets/below.png");
 	background-position: top;
 	background-size: 130% auto;
-
+  }
+  .grey{
+	color:rgb(23, 23, 24)
   }
 </style>
+
+<script>
+	const box = document.getElementById('magic_box');
+
+	let response = await fetch("https://hackatime.hackclub.com/api/v1/users/jms/stats", {
+		})
+	let data = await response.json()
+
+	console.log(data.data.human_readable_total)
+	console.log(data.data.is_coding_activity_visible)
+
+	box.textContent = (data.data.human_readable_total)
+</script>
