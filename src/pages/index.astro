@@ -6,7 +6,7 @@ import "../styles/global.css";
 
 <html lang="en">
 	<head>
-		
+		<script src="../../assets/index.js"></script>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
@@ -15,7 +15,6 @@ import "../styles/global.css";
 		<title>Main_Watch</title>
 	</head>
 	<body>
-		<div id="magic_box">fail</div>
 		<div id="my_website">
 			<div class = "flex justify-end">
 				<h1 class="text-yellow-500 text-right text-[10vw] font-['Arial'] font-bold">
@@ -62,7 +61,7 @@ import "../styles/global.css";
 				<div id="time">
 				</div>
 				<div>
-					True or False, am I currently coding at this moment?
+					Am I currently coding at this moment?
 				</div>
 				<div id="current">
 				</div>
@@ -75,8 +74,8 @@ import "../styles/global.css";
 				<div>
 					Am I?
 				</div>
-				<div id="wadu">
-					Yes
+				<div id="wadu" class="pb-[30vw]">
+					check
 				</div>
 			</div>
 		</div>
@@ -99,25 +98,3 @@ import "../styles/global.css";
 	color:rgb(23, 23, 24)
   }
 </style>
-
-<script>
-	const time = document.getElementById('time');
-	const current = document.getElementById('current');
-
-	let response = await fetch("https://hackatime.hackclub.com/api/v1/users/jms/stats", {
-	})
-	let data = await response.json()
-
-	time.textContent = (data.data.human_readable_total)
-	current.textContent = (data.data.is_coding_activity_visible)
-
-
-
-	const wadu = document.getElementById('wadu');
-
-	let wait = await fetch("https://time.now/developer/api/timezone/Pacific/Auckland", {
-	})
-	let dataa = await wait.json()
-
-	wadu.textContent = (dataa.datetime)
-</script>
