@@ -1,15 +1,1 @@
 @import "tailwindcss";
-  body {
-	cursor: url("../../assets/mouse.png") 10 12, none;
-    background-image: url("../../assets/sky.png");
-	background-position: top;
-	background-size: 100% 90%;
-  }
-  .final_section{
-	background-image: url("../../assets/below.png");
-	background-position: top;
-	background-size: 130% auto;
-  }
-  .grey{
-	color:rgb(23, 23, 24)
-  }
