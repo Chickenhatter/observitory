@@ -1,10 +1,15 @@
 ---
 import "../styles/global.css"
-
-const fim = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.API_KEY}`);
-const tean = await fim.json();
-console.log(tean)
-const image = (tean.url)
+let image = 'https://apod.nasa.gov/apod/image/2605/M104noirlab2612a.jpg'
+try {
+	const fim = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.API_KEY}`);
+	const tean = await fim.json();
+	console.log(tean)
+	image = (tean.url)
+} catch (error) {
+	console.log('Error fetching data:', error);
+	image = ('https://apod.nasa.gov/apod/image/2605/M104noirlab2612a.jpg');
+}
 ---
 
 
@@ -18,7 +23,7 @@ const image = (tean.url)
 		<meta name="generator" content={Astro.generator} />
 		<title>looking</title>
 	</head>
-    <body>
-        <img id="the_image" class="absolute" src={image}>
+    <body class="overflow-hidden">
+        <img id="the_image" class="absolute w-[200vw] max-w-none" src={image}>
 	</body>
 </html>
