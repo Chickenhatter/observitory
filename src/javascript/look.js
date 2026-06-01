@@ -48,12 +48,14 @@ function starwalking() {
         image.style.left = (x) + 'px'
     }
     if (keys['t']) {
-        t += 0.3
-        image.style.filter = 'blur('+ (Math.abs(t)) +'vw)';
-        console.log(t)
-    }
+        if (t < 10) {
+            t += 0.3
+        }
+        image.style.filter = 'blur('+ (Math.abs(t)) +'vw)';    }
     if (keys['g']) {
-        t -= 0.3
+        if (t > -10) {
+            t -= 0.3
+        }
         image.style.filter = 'blur('+ (Math.abs(t)) +'vw)';
     }
     rect = image.getBoundingClientRect();
@@ -63,10 +65,6 @@ function starwalking() {
     screenHeight = window.screen.height; 
     imageWidth = image.clientWidth
     imageHeight = image.clientHeight
-    console.log(imageWidth + "pxw");
-    console.log(imageHeight + "pxh");
-    console.log(-x + "x");
-    console.log(y + "y");
     requestAnimationFrame(starwalking)
 }
 
