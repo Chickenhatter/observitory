@@ -23,11 +23,35 @@ document.addEventListener('keyup', (e) => {
 
 function starwalking() {
     timser = screenHeight/600
+    console.log(x, 'xxxx')
+    console.log((screenWidth/3)-timser)
+    console.log(-(imageWidth-((screenWidth*2)/3)))
+    if ( (y ) > (screenHeight / 4)) {
+            y = ((screenHeight / 4) -1)
+            image.style.top = (y) + 'px'
+    }
+    if (((imageHeight-((screenHeight*3)/4)) < -y)) {
+            y = (-(imageHeight-((screenHeight*3)/4)))
+            image.style.top = (y) + 'px'
+    }
+    // if (((imageWidth-((screenWidth*2)/3))+timser < -x)) {
+    //         x = -(imageWidth-((screenWidth*2)/3))
+    //         image.style.top = (x) + 'px'
+    // }
+    if (( (x) > screenWidth/3)) {
+        x = (screenWidth/3)-timser
+        image.style.left = (x) + 'px'
+    }
+    
+
+
+
+
     if (keys['w']) {
-        image.style.top = (y) + 'px'
         if ( (y ) < (screenHeight / 4)) {
             y += timser
         }
+        image.style.top = (y) + 'px'
     }
     if (keys['s']) {
         image.style.top = (y) + 'px'
