@@ -25,7 +25,7 @@ function starwalking() {
     timser = screenHeight/600
     if (keys['w']) {
         image.style.top = (y) + 'px'
-        if ( (y) < 0) {
+        if ( (y ) < (screenHeight / 4)) {
             y += timser
         }
     }
@@ -36,13 +36,13 @@ function starwalking() {
         }            
     }
     if (keys['a']) {
-        if ( (x) < 0) {
+        if ( (x) < screenWidth/3) {
             x += timser
         }
         image.style.left = (x) + 'px'
     }
     if (keys['d']) {
-        if ((imageWidth-((screenWidth*3)/4)) > -x) {
+        if ((imageWidth-((screenWidth*2)/3)) > -x) {
             x -= timser
         }
         image.style.left = (x) + 'px'
@@ -70,17 +70,17 @@ function starwalking() {
 
 starwalking();
 
+const black = document.getElementById("blackout")
+const hide_view = document.getElementById("Remove")
+hide_view.addEventListener('click',() => {
+    if (black.classList.contains('opacity-0')){
+        black.classList.remove('opacity-0')
+    }else {
+        black.classList.add('opacity-0')
+    }
+});
 
-// let vert = (document.getElementById("target-id").textContent);
-// document.getElementById("target-id").textContent = 'test';
-
-//  export async function API_grab() {
-// 	try {
-// 		const fim = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}`);
-// 		const tean = await fim.json();
-// 		const image = (tean.url)
-//         return image
-// 	} catch (error){
-// 		console.error('Error fetching data:', error);
-// 	}
-// }
+const backing = document.getElementById("Goback")
+backing.addEventListener('click',() => {
+    window.location.href = "/"
+});
