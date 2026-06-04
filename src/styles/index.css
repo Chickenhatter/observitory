@@ -12,3 +12,6 @@ body {
 .grey{
 	color:rgb(23, 23, 24)
 }
+.darkness{
+	filter: brightness(50%); 
+}

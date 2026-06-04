@@ -40,3 +40,8 @@ else {
 	fail = 'No'
 }
 wadu.textContent = (fail)
+const observe = document.getElementById('observitory');
+observe.addEventListener('click',() => {
+    window.location.href = "/look"
+});
+
