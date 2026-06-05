@@ -22,9 +22,9 @@ document.addEventListener('keyup', (e) => {
 });
 
 function starwalking() {
+    imageWidth = image.clientWidth
+    imageHeight = image.clientHeight
     timser = screenHeight/600
-    console.log(-x, 'xxxx')
-    console.log((imageWidth-((screenWidth*2)/3)))
     if ( (y ) > (screenHeight / 4)) {
             y = ((screenHeight / 4) -1)
             image.style.top = (y) + 'px'
@@ -88,6 +88,7 @@ function starwalking() {
     screenHeight = window.screen.height; 
     imageWidth = image.clientWidth
     imageHeight = image.clientHeight
+    imagewh()
     requestAnimationFrame(starwalking)
 }
 
@@ -96,14 +97,42 @@ starwalking();
 const black = document.getElementById("blackout")
 const hide_view = document.getElementById("Remove")
 hide_view.addEventListener('click',() => {
-    if (black.classList.contains('opacity-0')){
-        black.classList.remove('opacity-0')
+    if (black.classList.contains('-z-100')){
+        black.classList.remove('-z-100')
     }else {
-        black.classList.add('opacity-0')
+        black.classList.add('-z-100')
     }
 });
+
+const adgnaf = document.getElementById("Fullimage")
+adgnaf.addEventListener('click',() => {
+    console.log('test')
+    if (limage.classList.contains('-z-90')){
+        limage.classList.remove('-z-90')
+        limage.classList.add('-z-20')
+    }else {
+        limage.classList.add('-z-90')
+        limage.classList.remove('-z-20')
+    }
+});
+
+
+
 
 const backing = document.getElementById("Goback")
 backing.addEventListener('click',() => {
     window.location.href = "/"
 });
+
+function imagewh() {
+    if (imageWidth > imageHeight) {
+        adgnaf.classList.add('w-[50vw]')
+        adgnaf.classList.add('max-h-none')
+        adgnaf.classList.add('h-auto')
+    }else {
+        adgnaf.classList.add('h-[50vw]')
+        adgnaf.classList.add('max-w-none')
+        adgnaf.classList.add('w-auto')
+
+    }
+}
