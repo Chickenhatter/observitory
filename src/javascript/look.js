@@ -12,6 +12,8 @@ let screenHeight = window.screen.height;
 let imageWidth = image.clientWidth
 let imageHeight = image.clientHeight
 let timser = 0
+const adgnaf = document.getElementById("Fullimage")
+
 
 
 document.addEventListener('keydown', (e) => {
@@ -47,25 +49,25 @@ function starwalking() {
 
 
     if (keys['w']) {
-        if ( (y ) < (screenHeight / 4)) {
+        if ( (y) < (screenHeight / 6)) {
             y += timser
         }
         image.style.top = (y) + 'px'
     }
     if (keys['s']) {
         image.style.top = (y) + 'px'
-        if ((imageHeight-((screenHeight*3)/4)) > -y) {
+        if ((imageHeight-((screenHeight*1)/6)) > -y) {
             y -= timser
         }            
     }
     if (keys['a']) {
-        if ( (x) < screenWidth/3) {
+        if ( (x) < screenWidth/4) {
             x += timser
         }
         image.style.left = (x) + 'px'
     }
     if (keys['d']) {
-        if ((imageWidth-((screenWidth*2)/3)) > -x) {
+        if ((imageWidth-((screenWidth*1)/2)) > -x) {
             x -= timser
         }
         image.style.left = (x) + 'px'
@@ -104,7 +106,6 @@ hide_view.addEventListener('click',() => {
     }
 });
 
-const adgnaf = document.getElementById("Fullimage")
 adgnaf.addEventListener('click',() => {
     console.log('test')
     if (limage.classList.contains('-z-90')){
@@ -125,14 +126,14 @@ backing.addEventListener('click',() => {
 });
 
 function imagewh() {
-    if (imageWidth > imageHeight) {
-        adgnaf.classList.add('w-[50vw]')
-        adgnaf.classList.add('max-h-none')
-        adgnaf.classList.add('h-auto')
+    if ((imageWidth/screenWidth) > (imageHeight/screenHeight)) {
+        limage.classList.add('w-[100vw]')
+        limage.classList.add('max-h-none')
+        limage.classList.add('h-auto')
     }else {
-        adgnaf.classList.add('h-[50vw]')
-        adgnaf.classList.add('max-w-none')
-        adgnaf.classList.add('w-auto')
+        limage.classList.add('h-[vh]')
+        limage.classList.add('max-w-none')
+        limage.classList.add('w-auto')
 
     }
 }
