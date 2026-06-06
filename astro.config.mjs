@@ -10,6 +10,7 @@ export default defineConfig({
   env: {
     schema: {
       API_KEY: envField.string({ context: 'server', access: 'secret' }),
+      API_BDA: envField.string({ context: 'server', access: 'secret' }),
     }
   },
   vite: {
