@@ -1,13 +1,6 @@
 ---
 import "../styles/global.css";
 import "../styles/index.css";
-
-const response = await fetch(
-  'https://api.tinyfn.io/v1/time/age?birthdate=2010-07-12',
-  { headers: { 'X-API-Key': `${import.meta.env.API_BDA}` } }
-);
-const result = await response.json();
-const ans = result.age_years
 ---
 
 
@@ -41,25 +34,50 @@ const ans = result.age_years
 			</div>
 		</div>
 		<div id="small about me">
-			<div class="text-yellow-400 font-['Arial'] font-bold pt-[20vw] text-[3vw]">
-				While you sit in this space you will be forced to hear my hobbies...
+			<div class="ml-[5vw] text-yellow-400 font-['Arial'] font-bold pt-[20vw] text-[3vw] mr-[5vw]">
+				While you sit in this space you will be forced to hear me list out some of my favourite hobbies hobbies...
 			</div>
-			<div class="pt-[20vw] text-yellow-400 font-['Arial'] font-bold pt-[20vw] text-[6vw]">
+
+
+			<div class="ml-[10vw] pt-[20vw] text-yellow-400 font-['Arial'] font-bold pt-[20vw] text-[4vw]">
 				Coding
 			</div>
-			<div class="ml-[10vw] bg-[#574d87] px-[3vw] py-[3vw] pl-[3vw] rounded w-[40vw]">
-				<img src="../../assets/coding.png" class=" rounded">
+			<div class="flex justify-end items-center">
+				<div class="ml-[10vw] bg-[#574d87] px-[3vw] py-[3vw] pl-[3vw] rounded-[2vw] w-[40vw]">
+					<img src="../../assets/coding.png" class="rounded-[2vw] w-[40vw]">
+				</div>
+				<div class="text-yellow-400 font-['Arial'] font-bold pt-[20vw] text-[2vw] ml-[10vw] mr-[10vw] mb-[20vw]">This is this own website you are currently on</div>
+			</div>
+
+			<div class="ml-[10vw] pt-[20vw] text-yellow-400 font-['Arial'] font-bold pt-[20vw] text-[4vw]">
+				Walks in NZ bush
+			</div>
+			<div class="flex justify-end items-center">
+				<div class="ml-[20vw] bg-[#574d87] px-[3vw] rounded-[2vw]  py-[3vw] pl-[3vw] w-[40vw]">
+					<img src="../../assets/bush_walk.png" class=" rounded-[2vw] w-[40vw]">
+				</div>
+			<div class="text-yellow-400 font-['Arial'] font-bold pt-[20vw] text-[2vw] ml-[10vw] mr-[10vw] mb-[20vw] max-w-[20vw] text-left">This is in a walk 5 minutes from my house, I love nz for its walks</div>
+			</div>
+			
+			<div class="ml-[10vw] pt-[20vw]pt-[20vw] text-yellow-400 font-['Arial'] font-bold pt-[20vw] text-[4vw]">
+				Huddles with others
+			</div>
+			<div class="flex justify-end items-center">
+				<div class="text-yellow-400 font-['Arial'] font-bold pt-[20vw] text-[2vw] mr-[10vw] mb-[20vw]">This is done on the hackclub slack</div>
+				<div class="bg-[#574d87] px-[3vw] py-[3vw] rounded-[2vw] pl-[3vw]  w-[40vw] mr-[10vw]">
+					<img id="termin" alt="fish" src="../../assets/huddle.png" class=" rounded-[2vw] w-[40vw]">
+				</div>
 			</div>
 		</div>
 
-		<div>
+		<div id="observity_image">
 			<img src="../../assets/grass.png" class="pt-[10vw]">
-			<img src="../../assets/observitory.png" id='observitory' class="absolute top-[510vw] darkness">
+			<img src="../../assets/observitory.png" id='observitory' class="absolute top-[270vw] darkness">
 		</div>
 		
 		<div class="final_section">
-			<div id="firstlast_box" class="pl-[21vw] pt-[80vw]  font-['Arial'] font-bold text-[1.5vw] pr-[27vw]">
-				Well you made it all the way here so you might as well learn a small amount about me. My name is James and I am a {ans} year old coder from NZ. I started coding due to <a href="https://hackclub.com/" class="grey">Hackclub</a> which is a non profit that encourages teens to code. I have participated in Horizons, Siege, Reboot and Scraps along with going to events like Daydream, Campfire and <a href="https://www.kiwihacks.org/" class="grey">Kiwihacks</a>
+			<div id="firstlast_box" class="pl-[21vw] pt-[80vw]  font-['Arial'] font-bold text-[1.5vw] pr-[27vw] inline-block flex">
+				Well you made it all the way here so you might as well learn a small amount about me. My name is James and I am a 15 year old coder from NZ. I started coding due to <a href="https://hackclub.com/" class="grey">Hackclub</a> which is a non profit that encourages teens to code. I have participated in Horizons, Siege, Reboot and Scraps along with going to events like Daydream, Campfire and <a href="https://www.kiwihacks.org/" class="grey">Kiwihacks</a>
 			</div>
 			<div id="secondlast_box" class="pl-[47vw] pt-[8vw] text-black-800  font-['Arial'] font-bold text-[1.5vw] pr-[0vw]">
 				<div class="text-[2.5vw]">
@@ -101,4 +119,5 @@ const ans = result.age_years
 			</div>
 		</div>
 	</body>
+
 </html>
