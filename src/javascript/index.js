@@ -45,3 +45,18 @@ observe.addEventListener('click',() => {
     window.location.href = "/look"
 });
 
+let abc = await fetch("https://api.datesapi.net/today", {
+})
+abc = await abc.json()
+abc = abc.result
+const firstPart = abc.slice(0, 4); 
+const secondPart = abc.slice(5, 7);
+const thirdPart = abc.slice(9, 10);
+abc = firstPart - 2010
+if (secondPart == 7 && thirdPart < 12) {
+    abc -= 1;
+} else if (secondPart < 7){
+	abc -= 1;
+}
+const agene = document.getElementById('ages');
+agene.textContent = abc
