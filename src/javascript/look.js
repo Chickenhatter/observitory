@@ -2,7 +2,7 @@ const keys = {};
 const image = document.getElementById('the_image')
 let y = 0;
 let x = 0;
-let t = 0;
+let t = 3;
 let place_in_spacet = 0
 let place_in_spaced = 0
 let rect = image.getBoundingClientRect();
@@ -13,7 +13,7 @@ let imageWidth = image.clientWidth
 let imageHeight = image.clientHeight
 let timser = 0
 const adgnaf = document.getElementById("Fullimage")
-
+image.style.filter = 'blur('+ (Math.abs(t)) +'vw)';
 
 
 document.addEventListener('keydown', (e) => {
