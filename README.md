@@ -10,4 +10,4 @@
 <p>You can learn a bit about me</p>
 <p>I have not found any issues but for all I know my api key could be right infront of your eyes</p>
 <p>This can be viewed on netifly</p>
-<img src="https://github.com/Chickenhatter/multistage-game-h/blob/main/Screenshot%20From%202026-05-24%2012-46-05.png">
+<img src="https://github.com/Chickenhatter/observitory/blob/main/image.png">
