@@ -8,6 +8,6 @@
 <p></p>
 <p>This is a personal website</p>
 <p>You can learn a bit about me</p>
-<p>I have not found any issues but for all I know my api key could be right infront of your eyes</p>
+<p>For some users apparently the view of the image in the telescope which should not be blurry is sometimes blurry but since I cannot experience that I cannot figure out how to solve it</p>
 <p>This can be viewed on netifly</p>
 <img src="https://github.com/Chickenhatter/observitory/blob/main/image.png">
