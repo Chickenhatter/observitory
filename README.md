@@ -1,6 +1,6 @@
 <h1>This was made for a hackclub event</h1>
 <p>This was made for horizons</p>
-<p>This was made with ai to help with api but nothing else, also since I am using netifly the image api dose not work but dose on non netifly</p>
+<p>This was made with ai to help with api but nothing else</p>
 <h3>Movement</h3>
 <p>Use W A S D for movement in the telescope</p>
 <p>Use T and G to change the viewing of the telescope in either directions, for blurring</p>
